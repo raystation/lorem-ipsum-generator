@@ -71,6 +71,8 @@ function randnum($array,$numbers_to_return){
 }
 
 function ipsum_text($ipsum,$paragraphs=3) {
+	$words_in_sentence=10;
+	$sentences_in_paragraph=5;
 
 	if ( is_null($paragraphs) || $paragraphs==0 ) { $paragraphs=3; }
 	
@@ -84,10 +86,10 @@ function ipsum_text($ipsum,$paragraphs=3) {
 	{ 
 		//prints out sentences
 		echo "<p>";
-		for ($sentence_counter=1; $sentence_counter <= 3 ; $sentence_counter++) { 
+		for ($sentence_counter=1; $sentence_counter <= $sentences_in_paragraph ; $sentence_counter++) { 
 		
 			//gets randomnumbers array
-			$randnums=randnum($array,10);
+			$randnums=randnum($array,$words_in_sentence);
 
 			//puts random words into array using rando numbers
 			foreach ($randnums as $number) {
