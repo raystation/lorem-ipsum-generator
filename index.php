@@ -38,7 +38,7 @@ $paragraphs = $_POST["paragraphs"];
 	
 	<footer>
 		<div class="container">
-			inspired by: <a href="http://www.rikeripsum.com/" target='_blank'>Riker Ipsum</a>, <a href="http://hipsum.co" target='_blank'>Hipster Ipsum</a>
+			Inspired by: <a href="http://www.rikeripsum.com/" target='_blank'>Riker Ipsum</a>, <a href="http://hipsum.co" target='_blank'>Hipster Ipsum</a>
 		</div>	
 	</footer>
 </body>
