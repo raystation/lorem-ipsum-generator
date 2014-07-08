@@ -29,7 +29,7 @@ $paragraphs = $_POST["paragraphs"];
 			<input type="submit" value="<?php echo $value ;?>" name="<?php echo $value ;?>">
 
 		</form>
-		<p><?php if ( is_null($ipsum)) { echo get_welcome(); } else { ipsum_text($paragraphs) ; } ?></p>
+		<p><?php if ( is_null($ipsum) && is_null($array) ) { echo get_welcome(); } else { ipsum_text($ipsum,$paragraphs) ; } ?></p>
 
 	</div>
 

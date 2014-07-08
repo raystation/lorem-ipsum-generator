@@ -5,20 +5,8 @@ function get_welcome() {
 	return $var;
 }
 
-function list_ipsums(){
-	$array=array(
-		"Video Games",
-		"RPGs",
-		"Fallout",
-		"Star Trek",
-		"Star Wars",
-		"Batman"
-	);
-	return $array;
-}
-
 function html_option_ipsums() {
-
+	require_once 'inc/lists.php';
 	$lists=list_ipsums();
 	foreach ($lists as $list_item) {
 		echo '<option value="'.$list_item.'"';
@@ -28,46 +16,24 @@ function html_option_ipsums() {
 	}
 }
 
-function ipsum_array() {
-	
-	//the array that stores all the words
-	$array=array(
-		"Mario",
-		"Snake",
-		"Galaga",
-		"burger time",
-		"controller",
-		"Sega",
-		"Wiimote",
-		"1-up",
-		"fire flower",
-		"ghost",
-		"Murasame",
-		"Masamune",
-		"Tri-force",
-		"finish him",
-		"hadoken",
-		"shoryuken",
-		"Sheng Long",
-		"Samus",
-		"8-bit",
-		"Inky",
-		"pacu pacu",
-		"tanuki suit",
-		"cowabunga",
-		"auto-fire",
-		"cheat code",
-		"adventure game",
-		"Guybrush Threepwood",
-		"Mame",
-		"arcade game",
-		"console",
-		"edutainment",
-		"role-playing game",
-		"first-person shooter",
-		"Nintendo"
+function ipsum_array($ipsum) {
+	require_once 'inc/lists.php';
+	switch ($ipsum) {
+		case 'Video Games':
+		$array=list_videogames();
+		break;
 
-	);
+		case 'RPGs':
+		$array=list_videogames();
+		break;		
+
+		case 'Fallout':
+		$array=list_fallout();
+		break;
+		
+		default:
+		break;
+	}
 	return $array;
 }
 
@@ -96,9 +62,13 @@ function randnum($array,$limit){
 	return $rand;
 }
 
-function ipsum_text($paragraphs=3) {
+function ipsum_text($ipsum,$paragraphs=3) {
+
 	if ( is_null($paragraphs) || $paragraphs==0 ) { $paragraphs=3; }
-	$array = ipsum_array();
+	
+	//gets the specific array and counts it
+	$array = ipsum_array($ipsum);
+	if ( is_null($array) ) { return; }
 	$array_count = count($array);
 	
 	//prints paragraphs
