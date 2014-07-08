@@ -1,38 +1,29 @@
-@media screen only (min-width: 768px) {
-}
-
-@media screen only (max-width: 767px) {
-
-}
-
-body {
-}
-
 .container {
-	padding: 1em;
-	max-width: 900px;
-	margin: 0 auto;
-	font-size: 1.35em;
-}
+  padding: 1em;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.35em; }
 
 footer {
-	font-family: sans-serif;
-	background-color: black;
-	color: white;
-	font-size: 8pt;
-	padding-top: 1rem;
-	padding-bottom: 25em;
-}
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  font-size: 8pt;
+  padding-top: 1rem;
+  padding-bottom: 25em; }
 
 footer a:link, footer a:visited {
-	color: tomato;
-}
+  color: tomato; }
 
 .dev {
-	position: fixed;
-	padding: 0.25em;
-	background-color: yellow;
-	bottom: 0;
-	width: 100%;
-	left: 0;
-}
+  position: fixed;
+  padding: 0.25em;
+  background-color: yellow;
+  bottom: 0;
+  width: 100%;
+  left: 0; }
+
+.markup {
+  color: rgba(255, 99, 71, 0.5); }
+  .markup:hover {
+    color: tomato; }

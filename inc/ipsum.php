@@ -1,7 +1,7 @@
 <?php
 
 function get_welcome() {
-	$var="Welcome to the Ipsum Generator. Tumblr fashion axe locavore, readymade squid 8-bit artisan VHS irony Tonx vegan paleo. Readymade cardigan forage irony. 90's beard Wes Anderson mumblecore Tonx, High Life roof party retro Cosby sweater vinyl. Cardigan mumblecore chillwave +1 gluten-free direct trade. </p><p>Keffiyeh cred Godard dreamcatcher, ennui beard forage slow-carb Neutra. Deep v Williamsburg whatever freegan, 8-bit squid butcher Truffaut banh mi brunch try-hard. Bushwick bitters messenger bag, cliche roof party irony Banksy deep v 3 wolf moon hashtag twee.";
+	$var="Welcome to the Ipsum Generator. Mario Wiimote Nintendo fire flower controller Galaga burger time Sega Snake 1-up. Wiimote 1-up controller Mario burger time Sega Snake Nintendo fire flower Galaga. Burger Time fire flower Sega Galaga Snake Nintendo controller Mario 1-up Wiimote.</p><p>Sega controller burger time Wiimote Galaga Snake Nintendo Mario 1-up fire flower. Mario Wiimote Nintendo 1-up Snake Sega fire flower Galaga controller burger time. Controller Wiimote Nintendo burger time Snake 1-up Galaga Mario fire flower Sega.";
 	return $var;
 }
 
@@ -11,13 +11,16 @@ function html_option_ipsums() {
 	foreach ($lists as $list_item) {
 		echo '<option value="'.$list_item.'"';
 		//will change the selected option after 'post'
-		if ( $ipsum == $list_item ){ echo " selected"; }
+		if ( $list_item==$ipsum ){ echo " selected"; }
 		echo ">".$list_item.'</option>';
 	}
 }
 
 function ipsum_array($ipsum) {
 	require_once 'inc/lists.php';
+	$ipsum = $_POST["ipsum"];
+	$array=array();
+
 	switch ($ipsum) {
 		case 'Video Games':
 		$array=list_videogames();
@@ -39,24 +42,29 @@ function ipsum_array($ipsum) {
 
 function html_print_sentence($sentence_array){
 	//prints out the sentence from sentence array
-	$counter=-1;
+	$counter=1;
 	foreach ($sentence_array as $word) {
-		$counter++;
 		//fix capitalization so it only capitalizes the first word
-		if ( $counter==0 ) { echo ucwords($word); } else { 	echo $word; }
-		if ( $counter == 10 ) { echo ". "; $counter = 0; } else { 	echo " "; }
+		if ( $counter == 1 ) { echo ucwords($word); } else { echo $word; }
+		if ( $counter == 11 ) { echo ".<span class='markup'>_</span>"; $counter = 1; } else { echo "<span class='markup'>-</span>"; }
+		$counter++;
 	}
 	//to do: punctuation
 }
 
-function randnum($array,$limit){
+function randnum($array,$numbers_to_return){
 
-	$array_count=count($array);
-	for ($count=0; $count < $limit; $count++) { 
-		$rand=array();
-		while ( $count<= $limit) {
-			$random_number=mt_rand(0,$array_count);
-			if ( !in_array($random_number, $rand) ) { $rand[]=$random_number; $count++; }
+	$array_count=count($array)-1;
+	$rand=array();
+
+	for ($count=0; $count <= $numbers_to_return; $count++) { 
+		while ( $count<= $numbers_to_return) {
+			$random_number=rand(0,$array_count);
+			// echo $random_number.",";
+			// checks to see if number is already in array
+			// if ( !in_array($random_number, $rand) ) { $rand[]=$random_number; $count++; }
+			$rand[]=$random_number; 
+			$count++;
 		}
 	}
 	return $rand;
@@ -72,21 +80,23 @@ function ipsum_text($ipsum,$paragraphs=3) {
 	$array_count = count($array);
 	
 	//prints paragraphs
-	for ($paragraph_counter=1; $paragraph_counter <= $paragraphs; $paragraph_counter++) { 
+	for ($paragraph_counter=1; $paragraph_counter <= $paragraphs; $paragraph_counter++) 
+	{ 
 		//prints out sentences
 		echo "<p>";
 		for ($sentence_counter=1; $sentence_counter <= 3 ; $sentence_counter++) { 
 		
 			//gets randomnumbers array
-			$randnum=randnum($array,10);
+			$randnums=randnum($array,10);
 
 			//puts random words into array using rando numbers
-			foreach ($randnum as $number) {
+			foreach ($randnums as $number) {
 				$sentence[]=$array[$number];
 			}
 			
 			html_print_sentence($sentence);
-			$sentence=NULL;
+			$sentence=array();
+			$randnums=array();
 		}
 		echo "</p>";
 	}

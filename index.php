@@ -21,10 +21,10 @@ $paragraphs = $_POST["paragraphs"];
 			
 			Select Your Flavor: 
 			<select name="ipsum">
-			<?php  html_option_ipsums(); ;?>
+			<?php  html_option_ipsums();?>
 			</select><br>
 
-			Number of paragraphs: <input type="text" name="paragraphs" value="3"><br>
+			Number of paragraphs: <input type="text" name="paragraphs" value="<?php if(is_null($paragraphs)){ echo "3";} else {echo $paragraphs;}?>"><br>
 			<?php if ( is_null($ipsum) ) { $value="submit"; } else { $value="refresh"; } ;?>
 			<input type="submit" value="<?php echo $value ;?>" name="<?php echo $value ;?>">
 

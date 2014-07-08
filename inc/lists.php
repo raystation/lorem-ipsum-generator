@@ -24,8 +24,7 @@ function list_videogames() {
 		"Wiimote",
 		"1-up",
 		"fire flower",
-
-		"Nintendo"
+		"Nintendo",
 	);
 	return $array;
 }
@@ -36,6 +35,18 @@ function list_fallout() {
 		"wasteland",
 		"mutants",
 		"ghost",
+		"Vault 101",
+		"Lone Wanderer",
+		"Benny",
+		"Brotherhood of Steel",
+		"Mr. House",
+		"stimpaks",
+		"Pipboy 3000",
+		"Nuka-Cola",
+		"cazadores",
+		"deathclaws",
+		"hunting rifle",
+		"New Vegas",		
 		"Murasame",
 		"Masamune",
 		"Tri-force",
