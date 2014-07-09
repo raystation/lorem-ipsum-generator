@@ -1,7 +1,7 @@
 <?php
 
 function get_welcome() {
-	$var="Welcome to the Ipsum Generator. Mario Wiimote Nintendo fire flower controller Galaga burger time Sega Snake 1-up. Wiimote 1-up controller Mario burger time Sega Snake Nintendo fire flower Galaga. Burger Time fire flower Sega Galaga Snake Nintendo controller Mario 1-up Wiimote.</p><p>Sega controller burger time Wiimote Galaga Snake Nintendo Mario 1-up fire flower. Mario Wiimote Nintendo 1-up Snake Sega fire flower Galaga controller burger time. Controller Wiimote Nintendo burger time Snake 1-up Galaga Mario fire flower Sega.";
+	$var="Welcome to the Ipsum Generator.</p><p>Mario Wiimote Nintendo fire flower controller Galaga burger time Sega Snake 1-up. Wiimote 1-up controller Mario burger time Sega Snake Nintendo fire flower Galaga. Burger Time fire flower Sega Galaga Snake Nintendo controller Mario 1-up Wiimote.</p><p>Sega controller burger time Wiimote Galaga Snake Nintendo Mario 1-up fire flower. Mario Wiimote Nintendo 1-up Snake Sega fire flower Galaga controller burger time. Controller Wiimote Nintendo burger time Snake 1-up Galaga Mario fire flower Sega.";
 	return $var;
 }
 
@@ -34,7 +34,12 @@ function ipsum_array($ipsum) {
 		$array=list_fallout();
 		break;
 		
+		case 'Star Wars':
+		$array=list_starwars();
+		break;
+		
 		default:
+		$array=list_videogames();
 		break;
 	}
 	return $array;
@@ -70,11 +75,11 @@ function randnum($array,$numbers_to_return){
 	return $rand;
 }
 
-function ipsum_text($ipsum,$paragraphs=3) {
+function ipsum_text($ipsum,$paragraphs=1) {
 	$words_in_sentence=10;
 	$sentences_in_paragraph=5;
 
-	if ( is_null($paragraphs) || $paragraphs==0 ) { $paragraphs=3; }
+	if ( is_null($paragraphs) || $paragraphs==0 ) { $paragraphs=1; }
 	
 	//gets the specific array and counts it
 	$array = ipsum_array($ipsum);
@@ -102,4 +107,11 @@ function ipsum_text($ipsum,$paragraphs=3) {
 		}
 		echo "</p>";
 	}
+}
+
+function get_date() {
+	date_default_timezone_set('America/Los_Angeles');
+	$date["year"]=date('Y');
+	$date["day"]=date('D');
+	return $date;
 }

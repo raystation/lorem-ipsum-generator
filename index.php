@@ -2,6 +2,7 @@
 require "inc/ipsum.php" ;
 $ipsum = $_POST["ipsum"];
 $paragraphs = $_POST["paragraphs"];
+$default_paragraph_value="1";
 ;?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@ $paragraphs = $_POST["paragraphs"];
 			<?php  html_option_ipsums();?>
 			</select><br>
 
-			Number of paragraphs: <input type="text" name="paragraphs" value="<?php if(is_null($paragraphs)){ echo "3";} else {echo $paragraphs;}?>"><br>
+			Number of paragraphs: <input type="text" name="paragraphs" value="<?php if(is_null($paragraphs)){ echo $default_paragraph_value;} else {echo $paragraphs;}?>"><br>
 			<?php if ( is_null($ipsum) ) { $value="submit"; } else { $value="refresh"; } ;?>
 			<input type="submit" value="<?php echo $value ;?>" name="<?php echo $value ;?>">
 
@@ -38,7 +39,8 @@ $paragraphs = $_POST["paragraphs"];
 	
 	<footer>
 		<div class="container">
-			Inspired by: <a href="http://www.rikeripsum.com/" target='_blank'>Riker Ipsum</a>, <a href="http://hipsum.co" target='_blank'>Hipster Ipsum</a>
+			Inspired by: <a href="http://www.rikeripsum.com/" target='_blank'>Riker Ipsum</a>, <a href="http://hipsum.co" target='_blank'>Hipster Ipsum</a><br>
+			Copyright &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
 		</div>	
 	</footer>
 </body>
