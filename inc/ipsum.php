@@ -5,7 +5,14 @@ $words_in_sentence=10;
 $sentences_in_paragraph=5;
 
 function get_welcome() {
-	$var="Welcome to the Ipsum Generator.</p><p>Mario Wiimote Nintendo fire flower controller Galaga burger time Sega Snake 1-up. Wiimote 1-up controller Mario burger time Sega Snake Nintendo fire flower Galaga. Burger Time fire flower Sega Galaga Snake Nintendo controller Mario 1-up Wiimote.</p><p>Sega controller burger time Wiimote Galaga Snake Nintendo Mario 1-up fire flower. Mario Wiimote Nintendo 1-up Snake Sega fire flower Galaga controller burger time. Controller Wiimote Nintendo burger time Snake 1-up Galaga Mario fire flower Sega.";
+	$var=
+	"Welcome to the Ipsum Generator.
+	</p><p>
+	We are aiming to make the only ipsum generator you'll ever need in a wide variety of flavors.
+	</p><p>
+	What is ipsum? <br>
+	In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout. 
+	";
 	return $var;
 }
 
@@ -104,7 +111,7 @@ function ipsum_text($ipsum,$paragraphs) {
 				$sentence_count++;				
 			} 
 			//make a comma appear randomly
-			elseif ( $word_count < $words_in_sentence && $word_count > 3 && mt_rand(0,100)<20 ) 
+			elseif ( $word_count < $words_in_sentence && $word_count > 3 && mt_rand(0,100)<10 ) 
 			{
 				$paragraph_array[]=$array[$num].", "; 
 				$word_count++;
@@ -146,4 +153,12 @@ function get_date() {
 	$date["year"]=date('Y');
 	$date["day"]=date('D');
 	return $date;
+}
+
+function get_dev(){
+	global $ipsum;
+	global $paragraphs;
+	echo '<div class="dev">';
+	echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;
+	echo "</div>";
 }

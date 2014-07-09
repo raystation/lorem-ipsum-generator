@@ -1,15 +1,17 @@
 <?php 
 require "inc/ipsum.php" ;
+$title="One Ipsum to Rule Them All";
 $ipsum = $_POST["ipsum"];
 $paragraphs = $_POST["paragraphs"];
 $default_paragraph_value="3";
+get_dev();
 ;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>One Ipsum to Rule Them All</title>
+	<title>Ipsum Generator | <?php echo $title ;?></title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/normalize.css">
 </head>
@@ -40,9 +42,5 @@ $default_paragraph_value="3";
 			Copyright &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
 		</div>	
 	</footer>
-
-	<!-- dev -->
-	<div class="dev"><?php echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;?></div>
-
 </body>
 </html>
