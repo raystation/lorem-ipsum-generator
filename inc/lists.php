@@ -246,8 +246,7 @@ function list_starwars_technobabble() {
 		"thermal exhaust port",
 		"navcomputer",
 		"Midochlorians",
-		"p
-		hototropic shielding",
+		"phototropic shielding",
 	);
 	return $array;
 }
