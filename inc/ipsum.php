@@ -41,9 +41,10 @@ function ipsum_text($ipsum,$paragraphs) {
 		
 		$random_number_array=array();
 
-		//adds more nmbers to the array if there are not enough
-		// if ( count($array) < $total_words ) 
-		// {	
+		// adds more nmbers to the array if there are not enough
+		while ( count($array) < $total_words ) 
+		{	
+			$array=array_merge($array,$array);
 		// 	echo "fuck";
 		// 	while ( count($new_array) < $total_words )  
 		// 	{
@@ -55,7 +56,7 @@ function ipsum_text($ipsum,$paragraphs) {
 		// 	var_dump($new_array);
 		// 	$random_number_array=array_rand($new_array,$total_words);
 		// 	// $new_array=$array;
-		// } 
+		} 
 		
 		// else 
 		// {
