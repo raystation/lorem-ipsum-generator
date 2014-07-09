@@ -232,7 +232,23 @@ function list_batman() {
 function list_technobabble() {
 	$array=array(
 	);
-	$array=array_merge($array,list_startrek_technobabble());
+	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble() );
+	return $array;
+}
+
+function list_starwars_technobabble() {
+	$array=array(
+		"power converter",
+		"carbon scoring",
+		"coolant",
+		"deflector grille",
+		"subsonic field emitter",
+		"thermal exhaust port",
+		"navcomputer",
+		"Midochlorians",
+		"p
+		hototropic shielding",
+	);
 	return $array;
 }
 
@@ -243,6 +259,7 @@ function list_starwars() {
 		"lightsaber",
 		"stormtrooper",
 	);
+	$array=array_merge($array, list_starwars_technobabble() );
 	return $array;
 }
 
