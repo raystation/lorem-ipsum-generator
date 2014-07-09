@@ -4,7 +4,7 @@ $title="One Ipsum to Rule Them All";
 $ipsum = $_POST["ipsum"];
 $paragraphs = $_POST["paragraphs"];
 $default_paragraph_value="3";
-get_dev();
+// get_dev();
 ;?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,14 +32,14 @@ get_dev();
 			<input type="submit" value="<?php echo $value ;?>" name="<?php echo $value ;?>">
 
 		</form>
-		<p><?php if ( is_null($ipsum) && is_null($array) ) { echo get_welcome(); } else { ipsum_text($ipsum,$paragraphs) ; } ?></p>
+		<?php if ( is_null($ipsum) && is_null($array) ) { echo get_welcome(); } else { ipsum_text($ipsum,$paragraphs) ; } ?>
 
 	</div>
 	
 	<footer>
 		<div class="container">
 			Inspired by: <a href="http://www.rikeripsum.com/" target='_blank'>Riker Ipsum</a>, <a href="http://hipsum.co" target='_blank'>Hipster Ipsum</a><br>
-			Copyright &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
+			All Rights Reserved &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
 		</div>	
 	</footer>
 </body>

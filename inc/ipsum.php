@@ -5,13 +5,11 @@ $words_in_sentence=10;
 $sentences_in_paragraph=5;
 
 function get_welcome() {
-	$var=
-	"Welcome to the Ipsum Generator.
-	</p><p>
-	We are aiming to make the only ipsum generator you'll ever need in a wide variety of flavors.
-	</p><p>
-	What is ipsum? <br>
-	In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout. 
+	$var="
+	<p>Welcome to the Ipsum Generator.</p>
+	<p>We are aiming to make the only ipsum generator you'll ever need in a wide variety of flavors.</p>
+	<h3>What is ipsum?</h3>
+	<p>In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout. </p>
 	";
 	return $var;
 }
@@ -26,37 +24,6 @@ function ipsum_array($ipsum) {
 	$ipsum="list_".$ipsum;
 	$array=$ipsum();
 	return $array;
-}
-
-function html_print_sentence($sentence_array){
-	//prints out the sentence from sentence array
-	$counter=1;
-	foreach ($sentence_array as $word) {
-		//fix capitalization so it only capitalizes the first word
-		if ( $counter == 1 ) { echo ucfirst($word); } else { echo $word; }
-		// debug if ( $counter == 11 ) { echo ".<span class='markup'>_</span>"; $counter = 1; } else { echo "<span class='markup'>-</span>"; }
-		if ( $counter == 11 ) { echo ". "; $counter = 1; } else { echo " "; }
-		$counter++;
-	}
-	//to do: punctuation
-}
-
-function randnum($array,$numbers_to_return){
-
-	$array_count=count($array)-1;
-	$rand=array();
-
-	for ($count=0; $count <= $numbers_to_return; $count++) { 
-		while ( $count<= $numbers_to_return) {
-			$random_number=rand(0,$array_count);
-			// echo $random_number.",";
-			// checks to see if number is already in array
-			if ( !in_array($random_number, $rand) ) { $rand[]=$random_number; $count++; }
-			// $rand[]=$random_number; 
-			// $count++;
-		}
-	}
-	return $rand;
 }
 
 //gets the list items and then prints it
@@ -136,6 +103,7 @@ function ipsum_text($ipsum,$paragraphs) {
 	}
 }
 
+//prints out the drop down list
 function html_option_ipsums() {
 	require_once 'inc/lists.php';
 	$lists=list_ipsums();
