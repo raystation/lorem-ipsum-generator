@@ -42,7 +42,7 @@ $default_paragraph_value="3";
 	</footer>
 
 	<!-- dev -->
-	<!-- <div class="dev"><?php echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;?></div> -->
+	<div class="dev"><?php echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;?></div>
 
 </body>
 </html>
