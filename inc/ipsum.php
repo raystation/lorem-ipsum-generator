@@ -8,6 +8,7 @@ function get_welcome() {
 function html_option_ipsums() {
 	require_once 'inc/lists.php';
 	$lists=list_ipsums();
+	global $ipsum;
 	foreach ($lists as $list_item) {
 		echo '<option value="'.$list_item.'"';
 		//will change the selected option after 'post'
@@ -51,7 +52,8 @@ function html_print_sentence($sentence_array){
 	foreach ($sentence_array as $word) {
 		//fix capitalization so it only capitalizes the first word
 		if ( $counter == 1 ) { echo ucwords($word); } else { echo $word; }
-		if ( $counter == 11 ) { echo ".<span class='markup'>_</span>"; $counter = 1; } else { echo "<span class='markup'>-</span>"; }
+		// debug if ( $counter == 11 ) { echo ".<span class='markup'>_</span>"; $counter = 1; } else { echo "<span class='markup'>-</span>"; }
+		if ( $counter == 11 ) { echo ". "; $counter = 1; } else { echo " "; }
 		$counter++;
 	}
 	//to do: punctuation
@@ -67,9 +69,9 @@ function randnum($array,$numbers_to_return){
 			$random_number=rand(0,$array_count);
 			// echo $random_number.",";
 			// checks to see if number is already in array
-			// if ( !in_array($random_number, $rand) ) { $rand[]=$random_number; $count++; }
-			$rand[]=$random_number; 
-			$count++;
+			if ( !in_array($random_number, $rand) ) { $rand[]=$random_number; $count++; }
+			// $rand[]=$random_number; 
+			// $count++;
 		}
 	}
 	return $rand;
