@@ -2,7 +2,7 @@
 require "inc/ipsum.php" ;
 $ipsum = $_POST["ipsum"];
 $paragraphs = $_POST["paragraphs"];
-$default_paragraph_value="1";
+$default_paragraph_value="3";
 ;?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +33,6 @@ $default_paragraph_value="1";
 		<p><?php if ( is_null($ipsum) && is_null($array) ) { echo get_welcome(); } else { ipsum_text($ipsum,$paragraphs) ; } ?></p>
 
 	</div>
-
-	<!-- dev -->
-	<div class="dev"><?php echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;?></div>
 	
 	<footer>
 		<div class="container">
@@ -43,5 +40,9 @@ $default_paragraph_value="1";
 			Copyright &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
 		</div>	
 	</footer>
+
+	<!-- dev -->
+	<!-- <div class="dev"><?php echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;?></div> -->
+
 </body>
 </html>

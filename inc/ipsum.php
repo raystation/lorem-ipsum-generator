@@ -5,18 +5,6 @@ function get_welcome() {
 	return $var;
 }
 
-function html_option_ipsums() {
-	require_once 'inc/lists.php';
-	$lists=list_ipsums();
-	global $ipsum;
-	foreach ($lists as $list_item) {
-		echo '<option value="'.$list_item.'"';
-		//will change the selected option after 'post'
-		if ( $list_item==$ipsum ){ echo " selected"; }
-		echo ">".$list_item.'</option>';
-	}
-}
-
 function ipsum_array($ipsum) {
 	require_once 'inc/lists.php';
 	$ipsum = $_POST["ipsum"];
@@ -108,6 +96,18 @@ function ipsum_text($ipsum,$paragraphs=1) {
 			$randnums=array();
 		}
 		echo "</p>";
+	}
+}
+
+function html_option_ipsums() {
+	require_once 'inc/lists.php';
+	$lists=list_ipsums();
+	global $ipsum;
+	foreach ($lists as $list_item) {
+		echo '<option value="'.$list_item.'"';
+		//will change the selected option after 'post'
+		if ( $list_item==$ipsum ){ echo " selected"; }
+		echo ">".$list_item.'</option>';
 	}
 }
 

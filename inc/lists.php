@@ -4,18 +4,18 @@ function list_ipsums(){
 	
 	$array=array(
 		"Video Games",
-		"RPGs",
-		"Star Wars",
+		// "RPGs",
+		// "Star Wars",
 		"Fallout",
-		"Star Trek",
-		"Batman"
+		// "Star Trek",
+		// "Batman"
 	);
 	return $array;
 }
 
 function list_videogames() {
 	$array=array(
-		"1-up",
+		"1-UP",
 		"8-bit",
 		"A Boy and his Blob",
 		"achievement unlocked",
@@ -120,7 +120,32 @@ function list_fallout() {
 		"cazadores",
 		"deathclaws",
 		"hunting rifle",
-		"New Vegas",	
+		"New Vegas",
+		"super mutants",
+		"chems",
+		"caravan",
+		"brahman",
+		"feral ghoul",
+		"prospector",
+		"outsider",
+		"raider",
+		"scavenger",
+		"vault dweller",
+		"wanderer",
+		"wastelander",
+		"Three Dog",
+		"Hydra",
+		"Jet",
+		"radroach",
+		"yao guai",
+		"Elder",
+		"Hail Caesar",
+		"Megaton",
+		"Little Lamplight",
+		"Harold",
+		"White Glove Society",
+		"Tunnel Snakes",
+
 	);
 	return $array;
 }
