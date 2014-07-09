@@ -42,27 +42,9 @@ function ipsum_text($ipsum,$paragraphs) {
 		$random_number_array=array();
 
 		// adds more nmbers to the array if there are not enough
-		while ( count($array) < $total_words ) 
-		{	
-			$array=array_merge($array,$array);
-		// 	echo "fuck";
-		// 	while ( count($new_array) < $total_words )  
-		// 	{
-		// 		$rand=mt_rand( 0, count($array) );
-		// 		$new_array[]=$array[$rand];
-				
-		// 	}
-		// 	echo count($new_array);
-		// 	var_dump($new_array);
-		// 	$random_number_array=array_rand($new_array,$total_words);
-		// 	// $new_array=$array;
-		} 
-		
-		// else 
-		// {
-			$random_number_array=array_rand($array,$total_words);
-		// }
+		while ( count($array) < $total_words ) 	{ $array=array_merge($array,$array); } 
 
+		$random_number_array=array_rand($array,$total_words);
 		shuffle($random_number_array);
 
 		$paragraph_array=array();
@@ -79,7 +61,7 @@ function ipsum_text($ipsum,$paragraphs) {
 				$sentence_count++;				
 			} 
 			//make a comma appear randomly
-			elseif ( $word_count < $words_in_sentence && $word_count > 3 && mt_rand(0,100)<10 ) 
+			elseif ( $word_count < $words_in_sentence -2 && $word_count > 3 && mt_rand(0,100)<20 ) 
 			{
 				$paragraph_array[]=$array[$num].", "; 
 				$word_count++;
