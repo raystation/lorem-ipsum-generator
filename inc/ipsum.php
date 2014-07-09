@@ -90,8 +90,10 @@ function ipsum_text($ipsum,$paragraphs) {
 		$random_number_array=array();
 
 		//makes array with random words
-		
 		$random_number_array=array_rand($array,$total_words);
+		foreach ($random_number_array as $num){
+			echo $num." ";
+		}
 		shuffle($random_number_array);
 
 		echo "<p>";
