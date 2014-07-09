@@ -20,11 +20,12 @@ footer {
 	font-size: 8pt;
 	padding-top: 1rem;
 	padding-bottom: 25em;
+	a:link, a:visited {
+		text-decoration: none;
+		color: tomato;
+	}
 }
 
-footer a:link, footer a:visited {
-	color: tomato;
-}
 
 .dev {
 	position: fixed;

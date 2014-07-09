@@ -64,11 +64,11 @@ function ipsum_text($ipsum,$paragraphs) {
 
 		shuffle($random_number_array);
 
-		echo "<p>";
 		$paragraph_array=array();
 		$word_count=1;
 		$sentence_count=1;
 
+		//adds punctuation to the words in the array
 		foreach ( $random_number_array as $num ) {
 
 			if ( $word_count==1 )
@@ -95,6 +95,8 @@ function ipsum_text($ipsum,$paragraphs) {
 			}
 		}
 
+		//prints out the paragraph in html
+		echo "<p>";
 		foreach ($paragraph_array as $key => $word) {
 			$key++;
 			echo $word." ";
