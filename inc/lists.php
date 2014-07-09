@@ -7,7 +7,7 @@ function list_ipsums(){
 		// "RPGs",
 		// "Star Wars",
 		"Fallout",
-		"Star Trek",
+		// "Star Trek",
 		// "Batman"
 	);
 	return $array;

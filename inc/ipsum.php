@@ -18,28 +18,6 @@ function ipsum_array($ipsum) {
 	$ipsum = strtolower($ipsum);
 	$ipsum="list_".$ipsum;
 	$array=$ipsum();
-
-	// switch ($ipsum) {
-	// 	case 'Video Games':
-	// 	$array=list_videogames();
-	// 	break;
-
-	// 	case 'RPGs':
-	// 	$array=list_videogames();
-	// 	break;		
-
-	// 	case 'Fallout':
-	// 	$array=list_fallout();
-	// 	break;
-		
-	// 	case 'Star Wars':
-	// 	$array=list_starwars();
-	// 	break;
-		
-	// 	default:
-	// 	$array=list_videogames();
-	// 	break;
-	// }
 	return $array;
 }
 
@@ -89,19 +67,30 @@ function ipsum_text($ipsum,$paragraphs) {
 		
 		$random_number_array=array();
 
-		//makes array with random words
-		$random_number_array=array_rand($array,$total_words);
-		foreach ($random_number_array as $num){
-			echo $num." ";
-		}
+		//adds more nmbers to the array if there are not enough
+		// if ( count($array) < $total_words ) 
+		// {	
+		// 	echo "fuck";
+		// 	while ( count($new_array) < $total_words )  
+		// 	{
+		// 		$rand=mt_rand( 0, count($array) );
+		// 		$new_array[]=$array[$rand];
+				
+		// 	}
+		// 	echo count($new_array);
+		// 	var_dump($new_array);
+		// 	$random_number_array=array_rand($new_array,$total_words);
+		// 	// $new_array=$array;
+		// } 
+		
+		// else 
+		// {
+			$random_number_array=array_rand($array,$total_words);
+		// }
+
 		shuffle($random_number_array);
 
 		echo "<p>";
-		// foreach ($random_number_array as $num) {
-		// 	echo $num." ";
-		// }
-
-		// make a paragraph array with shuffled text
 		$paragraph_array=array();
 		$word_count=1;
 		$sentence_count=1;
@@ -114,59 +103,30 @@ function ipsum_text($ipsum,$paragraphs) {
 				$word_count++;
 				$sentence_count++;				
 			} 
-			elseif ( $word_count==$words_in_sentence ) 
+			//make a comma appear randomly
+			elseif ( $word_count < $words_in_sentence && $word_count > 3 && mt_rand(0,100)<20 ) 
+			{
+				$paragraph_array[]=$array[$num].", "; 
+				$word_count++;
+			}
+			elseif ( $word_count==$words_in_sentence )
 			{
 				$paragraph_array[]=$array[$num].". "; 
-				$word_count=1; 
+				$word_count=1;
 			} 
-			else { 
+			else 
+			{ 
 				$paragraph_array[]=$array[$num]; 
 				$word_count++;
-				$sentence_count++;
 			}
-
-			// if ( $word_count==$words_in_sentence ) { $paragraph_array[]=$array[$num].". "; $word_count=1; }
-
-
 		}
 
 		foreach ($paragraph_array as $key => $word) {
 			$key++;
-			echo $word."  ";
+			echo $word." ";
 		}
 		echo "</p>";
 	}
-
-
-
-
-	
-	// //gets the specific array and counts it
-	// $array = ipsum_array($ipsum);
-	// if ( is_null($array) ) { return; }
-	// $array_count = count($array);
-	
-	// //prints paragraphs
-	// for ($paragraph_counter=1; $paragraph_counter <= $paragraphs; $paragraph_counter++) 
-	// { 
-	// 	//prints out sentences
-	// 	echo "<p>";
-	// 	for ($sentence_counter=1; $sentence_counter <= $sentences_in_paragraph ; $sentence_counter++) { 
-		
-	// 		//gets randomnumbers array
-	// 		$randnums=randnum($array,$words_in_sentence);
-
-	// 		//puts random words into array using rando numbers
-	// 		foreach ($randnums as $number) {
-	// 			$sentence[]=$array[$number];
-	// 		}
-			
-	// 		html_print_sentence($sentence);
-	// 		$sentence=array();
-	// 		$randnums=array();
-	// 	}
-	// 	echo "</p>";
-	// }
 }
 
 function html_option_ipsums() {
