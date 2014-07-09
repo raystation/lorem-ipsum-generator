@@ -7,7 +7,7 @@ function list_ipsums(){
 		// "RPGs",
 		// "Star Wars",
 		"Fallout",
-		// "Star Trek",
+		"Star Trek",
 		// "Batman"
 	);
 	return $array;
@@ -168,6 +168,32 @@ function list_starwars() {
 		"lightsaber",
 		"stormtrooper",
 		
+	);
+	return $array;
+}
+
+function list_startrek() {
+	$array=array(
+		"warp drive",
+		"medical scanner",
+		"photon torpedos",
+		"warp 1",
+		"Mr. Spock",
+		"James T. Kirk",
+		"Andoreans",
+		"Tribbles",
+		"beam me up",
+		"transporters",
+		"scanning",
+		"mind-meld",
+		"Vulcan neck pinch",
+		"Prime Directive",
+		"borg",
+		"holodeck",
+		"Galaxy class",
+		"Enterprise",
+		"Starfleet",
+		"Sulu",
 	);
 	return $array;
 }

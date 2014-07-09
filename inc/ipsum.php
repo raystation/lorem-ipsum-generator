@@ -8,29 +8,34 @@ function get_welcome() {
 function ipsum_array($ipsum) {
 	require_once 'inc/lists.php';
 	$ipsum = $_POST["ipsum"];
-	$array=array();
+	
+	//converts title into lowercase and no spaces
+	$ipsum = str_replace(" ", "", $ipsum);
+	$ipsum = strtolower($ipsum);
+	$ipsum="list_".$ipsum;
+	$array=$ipsum();
 
-	switch ($ipsum) {
-		case 'Video Games':
-		$array=list_videogames();
-		break;
+	// switch ($ipsum) {
+	// 	case 'Video Games':
+	// 	$array=list_videogames();
+	// 	break;
 
-		case 'RPGs':
-		$array=list_videogames();
-		break;		
+	// 	case 'RPGs':
+	// 	$array=list_videogames();
+	// 	break;		
 
-		case 'Fallout':
-		$array=list_fallout();
-		break;
+	// 	case 'Fallout':
+	// 	$array=list_fallout();
+	// 	break;
 		
-		case 'Star Wars':
-		$array=list_starwars();
-		break;
+	// 	case 'Star Wars':
+	// 	$array=list_starwars();
+	// 	break;
 		
-		default:
-		$array=list_videogames();
-		break;
-	}
+	// 	default:
+	// 	$array=list_videogames();
+	// 	break;
+	// }
 	return $array;
 }
 
@@ -39,7 +44,7 @@ function html_print_sentence($sentence_array){
 	$counter=1;
 	foreach ($sentence_array as $word) {
 		//fix capitalization so it only capitalizes the first word
-		if ( $counter == 1 ) { echo ucwords($word); } else { echo $word; }
+		if ( $counter == 1 ) { echo ucfirst($word); } else { echo $word; }
 		// debug if ( $counter == 11 ) { echo ".<span class='markup'>_</span>"; $counter = 1; } else { echo "<span class='markup'>-</span>"; }
 		if ( $counter == 11 ) { echo ". "; $counter = 1; } else { echo " "; }
 		$counter++;
