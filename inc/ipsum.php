@@ -101,6 +101,13 @@ function html_option_ipsums() {
 	}
 }
 
+//converts title into lowercase and no spaces
+function downcasespace($string) {
+	$string = str_replace(" ", "", $string);
+	$string = strtolower($string);
+	return $string;
+}
+
 function get_date() {
 	date_default_timezone_set('America/Los_Angeles');
 	$date["year"]=date('Y');

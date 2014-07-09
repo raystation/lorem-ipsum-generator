@@ -1,8 +1,15 @@
+@import "normalize";
+@import "compass/css3";
+
 @media only screen and (min-width: 768px) {
 }
 
 @media only screen and (max-width: 767px) {
 
+}
+
+body {
+	// @include transition(all 1.0s);
 }
 
 .container {
@@ -26,7 +33,6 @@ footer {
 	}
 }
 
-
 .dev {
 	position: fixed;
 	padding: 0.25em;
@@ -42,3 +48,19 @@ footer {
 		color: rgba(tomato,1);
 	}
 }
+
+h1,h2,h3,h4,h5,h6 {
+	a:link, a:visited {text-decoration: none;}
+}
+
+// .startrek-body {
+// 	// @include transition(all 1.0s);
+// 	background-color: black;
+// 	color: white;
+// }
+
+// .startrek-footer {
+// 	// @include transition(all 1.0s);
+// 	background-color: orange;
+// 	color: black;
+// }

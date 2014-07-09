@@ -13,9 +13,8 @@ $default_paragraph_value="3";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Ipsum Generator | <?php echo $title ;?></title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/normalize.css">
 </head>
-<body>
+<body class="<?php echo downcasespace($ipsum)."-body";?>">
 	
 	<div class="container">
 
@@ -36,7 +35,7 @@ $default_paragraph_value="3";
 
 	</div>
 	
-	<footer>
+	<footer class="<?php echo downcasespace($ipsum)."-footer";?>">
 		<div class="container">
 			Inspired by: <a href="http://www.rikeripsum.com/" target='_blank'>Riker Ipsum</a>, <a href="http://hipsum.co" target='_blank'>Hipster Ipsum</a><br>
 			All Rights Reserved &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
