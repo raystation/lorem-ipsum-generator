@@ -232,6 +232,8 @@ function list_batman() {
 }
 
 function list_technobabble() {
+	$array=array(
+	);	
 	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble(), list_doctorwho_technobabble() );
 	return $array;
 }
