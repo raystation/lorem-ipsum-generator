@@ -232,8 +232,6 @@ function list_batman() {
 }
 
 function list_technobabble() {
-	$array=array(
-	);
 	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble(), list_doctorwho_technobabble() );
 	return $array;
 }
@@ -265,8 +263,7 @@ function list_starwars() {
 }
 
 function list_pokemon() {
-	
-	$array=fgetcsv( fopen("lists/pokemon.txt", "r") );
+	$array=get_csv_path();
 	return $array;
 }
 

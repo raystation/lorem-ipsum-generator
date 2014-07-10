@@ -3,6 +3,7 @@
 // GLOBALS
 $words_in_sentence=10;
 $sentences_in_paragraph=5;
+$total_words=$words_in_sentence*$sentences_in_paragraph;
 
 function get_welcome() {
 	$var="
@@ -26,12 +27,22 @@ function ipsum_array($ipsum) {
 	return $array;
 }
 
+function get_csv_path(){
+	$ipsum = $_POST["ipsum"];
+	$ipsum=downcasespace($ipsum);
+	//returns a path where the csv file is located
+	$path="lists/".$ipsum.".txt";
+	//gets array from csv file
+	$array=fgetcsv( fopen( $path, "r") );
+	return $array;
+}
+
 //gets the list items and then prints it
 function ipsum_text($ipsum,$paragraphs) {
 
 	global $words_in_sentence;
 	global $sentences_in_paragraph;
-	$total_words=$words_in_sentence*$sentences_in_paragraph;
+	global $total_words;
 
 	//gets the specific array
 	$array = ipsum_array($ipsum);
