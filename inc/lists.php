@@ -10,6 +10,8 @@ function list_ipsums(){
 		"Fallout",
 		"Star Trek",
 		// "Batman"
+		"Doctor Who",
+		"Pokemon",
 	);
 	return $array;
 }
@@ -232,7 +234,7 @@ function list_batman() {
 function list_technobabble() {
 	$array=array(
 	);
-	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble() );
+	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble(), list_doctorwho_technobabble() );
 	return $array;
 }
 
@@ -259,6 +261,56 @@ function list_starwars() {
 		"stormtrooper",
 	);
 	$array=array_merge($array, list_starwars_technobabble() );
+	return $array;
+}
+
+function list_pokemon() {
+	
+	$array=fgetcsv( fopen("lists/pokemon.txt", "r") );
+	return $array;
+}
+
+function list_doctorwho() {
+	$array=array(
+		"TARDIS",
+		"Amy Pond",
+		"sexy",
+		"Pandorica",
+		"Dalek",
+		"Cyberman",
+		"The Silence",
+		"Weeping Angels",
+	);
+	$array=array_merge($array, list_doctorwho_technobabble() );
+	return $array;
+}
+
+function list_doctorwho_technobabble() {
+	$array=array(
+		"telepathic-barrier",
+		"psychic paper",
+		"cloaking field",
+		"computer sphere",
+		"crucible energy core",
+		"dimension vault",
+		"polycarbide",
+		"progenitor",
+		"videoscope",
+		"visualiser",
+		"voltoscope",
+		"temporal shift",
+		"temporal stabiliser",
+		"time controller",
+		"time corridor",
+		"schizoid accelerator",
+		"seismic detector",
+		"gravity beam",
+		"gravity bubble",
+		"gunstick",
+		"bio-electric dampening field",
+		"dalekanium",
+		"psycho-kinetic threshold manipulator",
+	);
 	return $array;
 }
 
@@ -349,6 +401,7 @@ function list_startrek() {
 		"warp drive",
 		"Wolf 359",
 		"wormhole",
+		"Tiberius",
 	);
 	
 	$array=array_merge($array,list_startrek_technobabble());
