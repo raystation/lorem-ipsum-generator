@@ -1,11 +1,12 @@
 <?php 
-require "inc/ipsum.php" ;
+require "inc/functions.php" ;
 $title="One Ipsum to Rule Them All";
 $ipsum = $_POST["ipsum"];
 $paragraphs = $_POST["paragraphs"];
 $default_paragraph_value="3";
 // get_dev();
 ;?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,6 @@ $default_paragraph_value="3";
 
 		<h1><a href="./">Ipsum Generator</a></h1>
 		<form method="post" action="<?php echo $PHP_SELF; ?>">
-			
 			Select Your Flavor: 
 			<select name="ipsum">
 			<?php  html_option_ipsums();?>
@@ -42,5 +42,6 @@ $default_paragraph_value="3";
 			All Rights Reserved &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Raymond Yuen</a>
 		</div>	
 	</footer>
+	<?php dev_info() ;?>
 </body>
 </html>

@@ -11,6 +11,7 @@ IPSUM GENERATOR
 - fix hyphens so they dont go to next line
 - copy button
 - up-down button next to paragraph
+- pasting plain text wil get rid of the paragraphs
 
 #todo-done
 - when list is too short, breaks
