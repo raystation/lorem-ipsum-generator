@@ -12,6 +12,17 @@ body {
 	// @include transition(all 1.0s);
 }
 
+div.logo {
+	padding-bottom: 0.5em;
+	a {
+		font-size: 25pt;
+		text-decoration: none;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-family: Helvetica;
+	}
+}
+
 .container {
 	padding: 1em;
 	max-width: 900px;
@@ -52,15 +63,3 @@ footer {
 h1,h2,h3,h4,h5,h6 {
 	a:link, a:visited {text-decoration: none;}
 }
-
-// .startrek-body {
-// 	// @include transition(all 1.0s);
-// 	background-color: black;
-// 	color: white;
-// }
-
-// .startrek-footer {
-// 	// @include transition(all 1.0s);
-// 	background-color: orange;
-// 	color: black;
-// }

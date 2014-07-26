@@ -15,10 +15,6 @@ function get_welcome() {
 	return $var;
 }
 
-function dev_info(){
-	echo "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
-}
-
 function ipsum_array($ipsum) {
 	require_once 'inc/lists.php';
 	$ipsum = $_POST["ipsum"];
@@ -130,10 +126,16 @@ function get_date() {
 	return $date;
 }
 
-function get_dev(){
-	global $ipsum;
-	global $paragraphs;
-	echo '<div class="dev">';
-	echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;
-	echo "</div>";
+function get_dev( $hud=true, $reload=true ){
+	if ( $hud ) {
+		global $ipsum;
+		global $paragraphs;
+		echo '<div class="dev">';
+		echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;
+		echo "</div>";
+	}
+
+	if ( $reload ) {
+		echo "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
+	}
 }
