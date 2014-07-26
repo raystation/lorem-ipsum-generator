@@ -3,7 +3,8 @@ IPSUM GENERATOR
 #todo
 - adjust list_ipsums() to include information about what other files to load for related lists
 	- ie: star wars + star wars technobabble
-- adjust 
+- make sure first words in the paragraph don't repeat
+- validation errors / security
 - non breaking spaces at end of sentences
 - related information to the subject
 	- add in color themes

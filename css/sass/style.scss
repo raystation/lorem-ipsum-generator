@@ -1,46 +1,71 @@
 @import "normalize";
 @import "compass/css3";
 
-@media only screen and (min-width: 768px) {
-}
+@media only screen and (min-width: 768px) {}
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {}
 
-}
+$footercolor: black;
+$linkcolor: orange;
+
+.add-top { padding-top: 2em; }
+.add-bottom { padding-bottom: 2em;}
 
 body {
-	// @include transition(all 1.0s);
+	p {
+		font-family: Times;
+		font-size: 15pt;
+	}
+}
+a {	
+	color: $linkcolor;
+	@include transition(all 1.0s);
+	&:hover { @include transition(all 1.0s);	 }
 }
 
 div.logo {
-	padding-bottom: 0.5em;
+	padding-top: 2em;
+	padding-bottom: 1em;
 	a {
-		font-size: 25pt;
+		font-size: 35pt;
 		text-decoration: none;
 		font-weight: 900;
 		text-transform: uppercase;
 		font-family: Helvetica;
+		color: $linkcolor;
 	}
 }
 
-.container {
-	padding: 1em;
-	max-width: 900px;
-	margin: 0 auto;
-	font-size: 1.35em;
+.ipsum-form {
+	padding: 2em;
+	// background-color: red;
+	// margin: 1em 2em;
+	// padding: 1em 2em;
+}
+
+.ipsum-text {
+	@extend .add-top;
+	@extend .add-bottom;
+	p {
+		font-size: 18pt;
+	}
 }
 
 footer {
+	width: 100%;
 	font-family: sans-serif;
 	line-height: 2em;
-	background-color: black;
+	background-color: $footercolor;
 	color: white;
-	font-size: 8pt;
+	font-size: 12pt;
 	padding-top: 1rem;
-	padding-bottom: 25em;
+	padding-bottom: 5em;
+	// @media only screen and ( max-width: 767px ) {
+	// 	padding-bottom: 5em;
+	// }
 	a:link, a:visited {
 		text-decoration: none;
-		color: tomato;
+		color: $linkcolor;
 	}
 }
 

@@ -43,6 +43,7 @@ function ipsum_text($ipsum,$paragraphs) {
 	global $words_in_sentence;
 	global $sentences_in_paragraph;
 	global $total_words;
+	$firstword=array();
 
 	//gets the specific array
 	$array = ipsum_array($ipsum);
@@ -62,26 +63,37 @@ function ipsum_text($ipsum,$paragraphs) {
 		$word_count=1;
 		$sentence_count=1;
 
-		//adds punctuation to the words in the array
+		//adds punctuation to the words and appends to new array
 		foreach ( $random_number_array as $num ) {
 
 			if ( $word_count==1 )
-			{ 
+			{ 	
+				//to-do make sure words don't repeat in the beginning of paragraphs
+				// if ( in_array( ucfirst( $array[$num] ), $firstword ) ) {
+				// 	echo "yup";
+				// }
+				// $firstword[]=ucfirst( $array[$num] ); 
 				$paragraph_array[]=ucfirst( $array[$num] ); 
 				$word_count++;
 				$sentence_count++;				
 			} 
+			// elseif ( $sentence_count == $sentences_in_paragraph && $word_count == $words_in_sentence - 1 ) 
+			// {
+			// 	$paragraph_array[]=$array[$num]."&nbsp;"; 
+			// }
 			//make a comma appear randomly
 			elseif ( $word_count < $words_in_sentence -2 && $word_count > 3 && mt_rand(0,100)<20 ) 
 			{
 				$paragraph_array[]=$array[$num].", "; 
 				$word_count++;
 			}
+			//adds commas
 			elseif ( $word_count==$words_in_sentence )
 			{
 				$paragraph_array[]=$array[$num].". "; 
 				$word_count=1;
 			} 
+			//adds word to array with no punctuation
 			else 
 			{ 
 				$paragraph_array[]=$array[$num]; 

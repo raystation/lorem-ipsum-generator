@@ -111,7 +111,7 @@ function list_videogames() {
 		"HUD",
 		"indie",
 		"Inky",
-		"invincibile",
+		"invincible",
 		"isometric",
 		"Koopa Troopa",
 		"lag",
