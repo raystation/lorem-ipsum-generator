@@ -38,7 +38,7 @@ include "inc/header.php";
 		<div class="small-4 columns">
 			<?php if ( is_null($ipsum) ) { $value="submit"; } else { $value="refresh"; } ;?>
 			<input type="submit" value="<?php echo $value ;?>" name="<?php echo $value ;?>">
-			</form>
+			</form>`
 		</div>
 
 	</fieldset>
