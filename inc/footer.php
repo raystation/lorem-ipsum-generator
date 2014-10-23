@@ -5,7 +5,7 @@
 			Yes, I understand this site looks like poop right now. <br>
 			All Rights Reserved &copy; <?php $date=get_date();echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Ray Yuen</a> <br>
 			<a href='https://github.com/raystation/lorem-ipsum-generator' target='_blank'>source</a>
-		</div>		
+		</div>
 	</div>
 </footer>
 

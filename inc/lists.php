@@ -1,9 +1,9 @@
-<?php 
+<?
 
 function list_ipsums(){
-	
+
 	$array=array(
-		"Technobabble", 
+		"Technobabble",
 		"Doctor Who",
 		"Video Games",
 		"Star Trek",
@@ -56,7 +56,7 @@ function list_videogames() {
 		"cowabunga",
 		"crafting",
 		"Hironobu Sakaguchi",
-		"Nobuo Uematsu",		
+		"Nobuo Uematsu",
 		"crash",
 		"credits",
 		"cut-scene",
@@ -80,7 +80,7 @@ function list_videogames() {
 		"finish him",
 		"fire flower",
 		"first-party",
-		"first-person shooter",		
+		"first-person shooter",
 		"frag",
 		"frame-rate",
 		"freakin' camper",
@@ -354,7 +354,7 @@ function list_batman() {
 
 function list_technobabble() {
 	$array=array(
-	);	
+	);
 	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble(), list_doctorwho_technobabble() );
 	return $array;
 }
@@ -679,7 +679,7 @@ function list_startrek() {
 		"to seek out new life and new civilizations",
 
 	);
-	
+
 	$array=array_merge($array,list_startrek_technobabble());
 	return $array;
 }

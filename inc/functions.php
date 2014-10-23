@@ -1,4 +1,4 @@
-<?php
+<?
 
 // GLOBALS
 $words_in_sentence=10;
@@ -18,7 +18,7 @@ function get_welcome() {
 function ipsum_array($ipsum) {
 	require_once 'inc/lists.php';
 	$ipsum = $_POST["ipsum"];
-	
+
 	//converts title into lowercase and no spaces
 	$ipsum = str_replace(" ", "", $ipsum);
 	$ipsum = strtolower($ipsum);
@@ -49,12 +49,12 @@ function ipsum_text($ipsum,$paragraphs) {
 	$array = ipsum_array($ipsum);
 
 	//prints the paragraphs based on the loop
-	for ($paragraph_count=1; $paragraph_count <= $paragraphs ; $paragraph_count++) { 
-		
+	for ($paragraph_count=1; $paragraph_count <= $paragraphs ; $paragraph_count++) {
+
 		$random_number_array=array();
 
 		// adds more nmbers to the array if there are not enough
-		while ( count($array) < $total_words ) 	{ $array=array_merge($array,$array); } 
+		while ( count($array) < $total_words ) 	{ $array=array_merge($array,$array); }
 
 		$random_number_array=array_rand($array,$total_words);
 		shuffle($random_number_array);
@@ -67,36 +67,36 @@ function ipsum_text($ipsum,$paragraphs) {
 		foreach ( $random_number_array as $num ) {
 
 			if ( $word_count==1 )
-			{ 	
+			{
 				//to-do make sure words don't repeat in the beginning of paragraphs
 				// if ( in_array( ucfirst( $array[$num] ), $firstword ) ) {
 				// 	echo "yup";
 				// }
-				// $firstword[]=ucfirst( $array[$num] ); 
-				$paragraph_array[]=ucfirst( $array[$num] ); 
+				// $firstword[]=ucfirst( $array[$num] );
+				$paragraph_array[]=ucfirst( $array[$num] );
 				$word_count++;
-				$sentence_count++;				
-			} 
-			// elseif ( $sentence_count == $sentences_in_paragraph && $word_count == $words_in_sentence - 1 ) 
+				$sentence_count++;
+			}
+			// elseif ( $sentence_count == $sentences_in_paragraph && $word_count == $words_in_sentence - 1 )
 			// {
-			// 	$paragraph_array[]=$array[$num]."&nbsp;"; 
+			// 	$paragraph_array[]=$array[$num]."&nbsp;";
 			// }
 			//make a comma appear randomly
-			elseif ( $word_count < $words_in_sentence -2 && $word_count > 3 && mt_rand(0,100)<20 ) 
+			elseif ( $word_count < $words_in_sentence -2 && $word_count > 3 && mt_rand(0,100)<20 )
 			{
-				$paragraph_array[]=$array[$num].", "; 
+				$paragraph_array[]=$array[$num].", ";
 				$word_count++;
 			}
 			//adds commas
 			elseif ( $word_count==$words_in_sentence )
 			{
-				$paragraph_array[]=$array[$num].". "; 
+				$paragraph_array[]=$array[$num].". ";
 				$word_count=1;
-			} 
+			}
 			//adds word to array with no punctuation
-			else 
-			{ 
-				$paragraph_array[]=$array[$num]; 
+			else
+			{
+				$paragraph_array[]=$array[$num];
 				$word_count++;
 			}
 		}
