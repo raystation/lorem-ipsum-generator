@@ -130,24 +130,9 @@ function downcasespace($string) {
 	$string = strtolower($string);
 	return $string;
 }
-
 function get_date() {
 	date_default_timezone_set('America/Los_Angeles');
 	$date["year"]=date('Y');
 	$date["day"]=date('D');
 	return $date;
-}
-
-function get_dev( $hud=true, $reload=true ){
-	if ( $hud ) {
-		global $ipsum;
-		global $paragraphs;
-		echo '<div class="dev">';
-		echo " ipsum: ".$ipsum.", paragraphs: ".$paragraphs;
-		echo "</div>";
-	}
-
-	if ( $reload ) {
-		echo "<script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>";
-	}
 }

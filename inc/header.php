@@ -9,4 +9,3 @@
   <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
-<? get_dev(false);?>
