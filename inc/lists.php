@@ -12,7 +12,8 @@ function list_ipsums(){
 		"Fallout",
 		// "Batman"
 		"Pokemon",
-		// "Indiana Jones",
+		"Back to the Future",
+		"Indiana Jones",
 		// "Twilight Zone",
 	);
 	return $array;
@@ -355,7 +356,7 @@ function list_batman() {
 function list_technobabble() {
 	$array=array(
 	);
-	$array=array_merge($array,list_startrek_technobabble(), list_starwars_technobabble(), list_doctorwho_technobabble() );
+	$array=array_merge($array,list_startrek_technobabble(), list_backtothefuture_technobabble(), list_starwars_technobabble(), list_doctorwho_technobabble() );
 	return $array;
 }
 
@@ -758,7 +759,6 @@ function list_startrek_technobabble() {
 	);
 	return $array;
 }
-
 function list_indianajones() {
 	$array=array(
 		"abyss",
@@ -860,6 +860,109 @@ function list_indianajones() {
 		"Warehouse 51",
 		"Well of Souls",
 		"zeppelin",
+	);
+	return $array;
+}
+function list_backtothefuture() {
+	$array=array(
+		"1.21 gigawatts",
+		"88 mph",
+		"AK-47",
+		"Biff Tannen",
+		"bolt of lightning",
+		"Buford \"Mad Dog\" Tannen",
+		"bullet-proof vest",
+		"butthead",
+		"Cafe 80's",
+		"Calvin Klein",
+		"Chicago Cubs",
+		"chicken",
+		"Clara Clayton Brown",
+		"Clint Eastwood",
+		"clock tower",
+		"Colt Peacemaker",
+		"Copernicus",
+		"Courthouse Square",
+		"dad, dad, daddio",
+		"Darth Vader",
+		"Delgado Mine",
+		"DeLorean",
+		"Doc Brown",
+		"Dr. Emmett Brown",
+		"Eastwood Ravine",
+		"Einstein",
+		"Enchantment Under the Sea",
+		"Fistful of Dollars",
+		"future",
+		"George McFly",
+		"grandfather paradox",
+		"Grays Sports Almanac",
+		"Great Scott",
+		"Griff Tannen",
+		"Hill Valley",
+		"Hilldale",
+		"I'm your density",
+		"January 1, 1885",
+		"Jennifer Parker",
+		"Johnny B. Goode",
+		"Jules Verne",
+		"Libyans",
+		"Lone Pine Mall",
+		"Lorraine Baines McFly",
+		"Lyon Estates",
+		"manure",
+		"Marty McFly",
+		"Marvin Berry",
+		"Max Headroom",
+		"Mayor Goldie Wilson",
+		"Michael Jackson",
+		"Mr. Fusion",
+		"Mr. Strickland",
+		"my mother's got the hots for me",
+		"Needles",
+		"November 5, 1955",
+		"Oh LàLà",
+		"Otis Peabody",
+		"peeping tom",
+		"Planet Vulcan",
+		"Ronald Reagan",
+		"Save The Clock Tower",
+		"Seamus McFly",
+		"Shonash Ravine",
+		"skateboard",
+		"Smith &amp; Wesson Model 60",
+		"The Power of Love",
+		"this is heavy",
+		"this sucker is nuclear",
+		"Twin Pines Mall",
+		"we don't need roads",
+		"Wild Gunman",
+		"yellow",
+		"you're a slacker",
+		"you're gonna see some serious shit",
+		"DustBuster",
+	);
+	$array=array_merge($array, list_backtothefuture_technobabble() );
+	return $array;
+}
+function list_backtothefuture_technobabble() {
+	$array=array(
+		"flux capacitor",
+		"hover conversion",
+		"hoverboard",
+		"hydrator",
+		"jigowatt",
+		"Kirk Gibson Jr. Slugger 2000 adjustable bat",
+		"paradox",
+		"plutonium",
+		"ripple effect",
+		"scene screen",
+		"space-time continuum",
+		"temporal displacement",
+		"The Scenery Channel",
+		"time circuits",
+		"time machine",
+		"train locomotive",
 	);
 	return $array;
 }
