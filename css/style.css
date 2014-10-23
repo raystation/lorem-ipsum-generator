@@ -433,23 +433,30 @@ th {
   padding: 0;
 }
 
-/* line 11, sass/style.scss */
+/* line 10, sass/style.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 12, sass/style.scss */
 .add-top, .ipsum-text {
   padding-top: 2em;
 }
 
-/* line 12, sass/style.scss */
+/* line 13, sass/style.scss */
 .add-bottom, .ipsum-text {
   padding-bottom: 2em;
 }
 
-/* line 15, sass/style.scss */
+/* line 16, sass/style.scss */
 body p {
   font-family: "Circular", sans-serif;
   font-size: 15pt;
 }
 
-/* line 20, sass/style.scss */
+/* line 21, sass/style.scss */
 a:link, a:visited {
   font-family: inherit;
   color: magenta;
@@ -458,7 +465,7 @@ a:link, a:visited {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 24, sass/style.scss */
+/* line 25, sass/style.scss */
 a:link:hover, a:visited:hover {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
@@ -466,24 +473,25 @@ a:link:hover, a:visited:hover {
   transition: all 1s;
 }
 
-/* line 26, sass/style.scss */
+/* line 27, sass/style.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Circular", sans-serif;
+  font-family: "Circular", sans-serif !important;
   font-weight: bold;
   letter-spacing: 1px;
+  font-weight: 900 !important;
 }
-/* line 31, sass/style.scss */
+/* line 32, sass/style.scss */
 h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:link, h4 a:visited, h5 a:link, h5 a:visited, h6 a:link, h6 a:visited {
   font-family: "Circular", sans-serif;
   text-decoration: none;
 }
 
-/* line 36, sass/style.scss */
+/* line 37, sass/style.scss */
 div.logo {
   padding-top: 2em;
   padding-bottom: 1em;
 }
-/* line 39, sass/style.scss */
+/* line 40, sass/style.scss */
 div.logo a {
   font-size: 35pt;
   text-decoration: none;
@@ -498,30 +506,31 @@ div.logo a {
   padding: 2em;
 }
 
-/* line 59, sass/style.scss */
+/* line 58, sass/style.scss */
 .ipsum-text p {
-  font-size: 18pt;
+  font-size: 16pt;
+  max-width: 31em;
 }
 
-/* line 64, sass/style.scss */
-footer {
+/* line 63, sass/style.scss */
+.footer {
+  background-color: silver;
   width: 100%;
   font-family: "Circular", sans-serif;
   line-height: 2em;
-  background-color: black;
-  color: white;
+  color: black;
   font-size: 12pt;
   padding-top: 1rem;
   padding-bottom: 5em;
   letter-spacing: 1px;
 }
-/* line 78, sass/style.scss */
-footer a:link, footer a:visited {
+/* line 77, sass/style.scss */
+.footer a:link, .footer a:visited {
   text-decoration: none;
-  color: magenta;
+  color: #cc00cc;
 }
 
-/* line 84, sass/style.scss */
+/* line 82, sass/style.scss */
 .dev {
   position: fixed;
   padding: 0.25em;
@@ -531,11 +540,11 @@ footer a:link, footer a:visited {
   left: 0;
 }
 
-/* line 93, sass/style.scss */
+/* line 90, sass/style.scss */
 .markup {
   color: rgba(255, 99, 71, 0.5);
 }
-/* line 95, sass/style.scss */
+/* line 92, sass/style.scss */
 .markup:hover {
   color: tomato;
 }

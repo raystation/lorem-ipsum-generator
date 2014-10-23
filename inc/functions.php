@@ -2,7 +2,7 @@
 
 // GLOBALS
 $words_in_sentence=10;
-$sentences_in_paragraph=5;
+$sentences_in_paragraph=3;
 $total_words=$words_in_sentence*$sentences_in_paragraph;
 
 function get_welcome() {

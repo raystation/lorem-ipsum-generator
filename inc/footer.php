@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
 	<div class="row">
         <div class="small-12 columns">
 			All Rights Reserved &copy; <? $date=get_date(); echo $date["year"];?> <a href="http://www.rayuen.com" target='_blank'>Ray Yuen</a> <br>
