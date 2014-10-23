@@ -1,12 +1,16 @@
 <?
-	require "inc/functions.php" ;
-	$title="One Ipsum to Rule Them All";
+	require_once "inc/functions.php" ;
 	$ipsum = (isset( $_POST["ipsum"] ) ? $_POST["ipsum"] : null );
 	$paragraphs = (isset( $_POST["paragraphs"] ) ? $_POST["paragraphs"] : null );
-	// $ipsum = $_POST["ipsum"];
-	// $paragraphs = $_POST["paragraphs"];
 	$default_paragraph_value="3";
+
+	if ( isset($ipsum) ) {
+		$title = $ipsum;
+	} else {
+		$title = "One Ipsum to Rule Them All";
+	}
 	include "inc/header.php";
+
 ;?>
 
 <div class="row">
@@ -33,11 +37,11 @@
 				Number of paragraphs:
 		</div>
 		<div class="small-4 columns">
-			<input type="text" name="paragraphs" value="<? if(is_null($paragraphs)){ echo $default_paragraph_value;} else {echo $paragraphs;}?>">
+			<input type="text" name="paragraphs" value="<? if( !isset($paragraphs) ){ echo $default_paragraph_value;} else {echo $paragraphs;}?>">
 		</div>
 
 		<div class="small-4 columns">
-			<? if ( is_null($ipsum) ) { $value="submit"; } else { $value="refresh"; } ;?>
+			<? if ( !isset($ipsum) ) { $value="submit"; } else { $value="refresh"; } ;?>
 			<input type="submit" value="<? echo $value ;?>" name="<? echo $value ;?>">
 			</form>
 		</div>

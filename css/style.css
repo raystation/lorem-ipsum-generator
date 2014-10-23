@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -444,20 +445,21 @@ th {
 
 /* line 15, sass/style.scss */
 body p {
-  font-family: Times;
+  font-family: "Circular", sans-serif;
   font-size: 15pt;
 }
 
 /* line 20, sass/style.scss */
-a {
-  color: orange;
+a:link, a:visited {
+  font-family: inherit;
+  color: magenta;
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 23, sass/style.scss */
-a:hover {
+/* line 24, sass/style.scss */
+a:link:hover, a:visited:hover {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
@@ -465,48 +467,61 @@ a:hover {
 }
 
 /* line 26, sass/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Circular", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+/* line 31, sass/style.scss */
+h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:link, h4 a:visited, h5 a:link, h5 a:visited, h6 a:link, h6 a:visited {
+  font-family: "Circular", sans-serif;
+  text-decoration: none;
+}
+
+/* line 36, sass/style.scss */
 div.logo {
   padding-top: 2em;
   padding-bottom: 1em;
 }
-/* line 29, sass/style.scss */
+/* line 39, sass/style.scss */
 div.logo a {
   font-size: 35pt;
   text-decoration: none;
   font-weight: 900;
   text-transform: uppercase;
-  font-family: Helvetica;
-  color: orange;
+  font-family: "Circular";
+  color: magenta;
 }
 
-/* line 39, sass/style.scss */
+/* line 49, sass/style.scss */
 .ipsum-form {
   padding: 2em;
 }
 
-/* line 49, sass/style.scss */
+/* line 59, sass/style.scss */
 .ipsum-text p {
   font-size: 18pt;
 }
 
-/* line 54, sass/style.scss */
+/* line 64, sass/style.scss */
 footer {
   width: 100%;
-  font-family: sans-serif;
+  font-family: "Circular", sans-serif;
   line-height: 2em;
   background-color: black;
   color: white;
   font-size: 12pt;
   padding-top: 1rem;
   padding-bottom: 5em;
+  letter-spacing: 1px;
 }
-/* line 66, sass/style.scss */
+/* line 78, sass/style.scss */
 footer a:link, footer a:visited {
   text-decoration: none;
-  color: orange;
+  color: magenta;
 }
 
-/* line 72, sass/style.scss */
+/* line 84, sass/style.scss */
 .dev {
   position: fixed;
   padding: 0.25em;
@@ -516,16 +531,24 @@ footer a:link, footer a:visited {
   left: 0;
 }
 
-/* line 81, sass/style.scss */
+/* line 93, sass/style.scss */
 .markup {
   color: rgba(255, 99, 71, 0.5);
 }
-/* line 83, sass/style.scss */
+/* line 95, sass/style.scss */
 .markup:hover {
   color: tomato;
 }
 
-/* line 89, sass/style.scss */
-h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, h3 a:link, h3 a:visited, h4 a:link, h4 a:visited, h5 a:link, h5 a:visited, h6 a:link, h6 a:visited {
-  text-decoration: none;
+@font-face {
+  font-family: 'Circular';
+  src: url("fonts/circular-book.woff") format("woff"), url("fonts/circular-book.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Circular';
+  src: url("fonts/circular-medium.woff") format("woff"), url("fonts/circular-medium.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  font-weight: bold;
 }

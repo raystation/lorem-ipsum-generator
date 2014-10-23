@@ -6,23 +6,33 @@
 @media only screen and (max-width: 767px) {}
 
 $footercolor: black;
-$linkcolor: orange;
+$linkcolor: magenta;
 
 .add-top { padding-top: 2em; }
 .add-bottom { padding-bottom: 2em;}
 
 body {
 	p {
-		font-family: Times;
+		font-family: "Circular", sans-serif;
 		font-size: 15pt;
 	}
 }
-a {	
+a:link, a:visited {
+	font-family: inherit;
 	color: $linkcolor;
 	@include transition(all 1.0s);
 	&:hover { @include transition(all 1.0s);	 }
 }
-
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Circular", sans-serif;
+	// text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	a:link, a:visited {
+		font-family: "Circular", sans-serif;
+		text-decoration: none;
+	}
+}
 div.logo {
 	padding-top: 2em;
 	padding-bottom: 1em;
@@ -31,7 +41,7 @@ div.logo {
 		text-decoration: none;
 		font-weight: 900;
 		text-transform: uppercase;
-		font-family: Helvetica;
+		font-family: "Circular";
 		color: $linkcolor;
 	}
 }
@@ -53,13 +63,15 @@ div.logo {
 
 footer {
 	width: 100%;
-	font-family: sans-serif;
+	font-family: "Circular", sans-serif;
 	line-height: 2em;
 	background-color: $footercolor;
 	color: white;
 	font-size: 12pt;
 	padding-top: 1rem;
 	padding-bottom: 5em;
+	letter-spacing: 1px;
+	// font-weight: 900;
 	// @media only screen and ( max-width: 767px ) {
 	// 	padding-bottom: 5em;
 	// }
@@ -85,6 +97,18 @@ footer {
 	}
 }
 
-h1,h2,h3,h4,h5,h6 {
-	a:link, a:visited {text-decoration: none;}
+// FONTS
+// ========================
+@font-face {
+  font-family: 'Circular';
+  src:
+	  url('fonts/circular-book.woff') format('woff'),
+	  url('fonts/circular-book.ttf') format('truetype');
+	  font-weight: normal;
+}
+@font-face {
+  font-family: 'Circular';
+  src: url('fonts/circular-medium.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('fonts/circular-medium.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+       font-weight: bold;
 }
